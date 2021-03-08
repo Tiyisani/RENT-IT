@@ -1,0 +1,36 @@
+<ion-app>
+  <ion-menu side="start" menuId="sideMenu" contentId="main" class="my-custom-menu">
+<ion-header>
+  <ion-toolbar>
+<ion-title>Equipment</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+      <ion-menu-toggle >
+        <ion-item color="primary" menu="sideMenu" lines="none" routerLink="/equipment/tabs/discover">
+        <ion-icon name="hammer-outline" slot="start"></ion-icon>
+        <ion-label>Discover Equipment</ion-label>
+      </ion-item></ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item lines="none" routerLink="/bookings" >
+          <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+          <ion-label>Hired Equipment</ion-label>
+        </ion-item>
+       </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item  (click)="onLogOut()" button>
+          <ion-icon  slot="start" name="log-out-outline"></ion-icon>
+          <ion-label>Logout</ion-label>      
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item lines="none" >
+         
+          </ion-item>
+        </ion-menu-toggle>
+    </ion-list>
+</ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
