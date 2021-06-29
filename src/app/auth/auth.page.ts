@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService,AuthResponseData } from './auth.service';
 import { Router } from '@angular/router';
-import { LoadingController, AlertController } from '@ionic/angular';
+import { LoadingController, AlertController, Platform } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 
@@ -15,14 +15,18 @@ import { Observable } from 'rxjs';
 export class AuthPage implements OnInit {
 isLoading = false;
 isLogin = true;
-
+usePicker = false;
   constructor(
     private authService: AuthService,
     private route: Router, 
     private loadingCtrl:LoadingController,
-    private alertCtrl: AlertController) { }
+    private alertCtrl: AlertController,private platform:Platform) { }
 
   ngOnInit() {
+    if(this.platform.is('desktop')
+    ){
+      this.usePicker = true;
+    }
   }
   authenticate(email:string,password:string){
     this.isLoading = true;
@@ -83,6 +87,25 @@ isLogin = true;
   onSwitchAuthMode(){
     this.route.navigateByUrl('/auth/register');
   }
+  onNext(){
+    this.route.navigateByUrl('/auth');
+  }
+  onLoginPage(){
+    this.route.navigateByUrl('/auth/login');
+  }
+  onTermsPage(){
+    this.route.navigateByUrl('/auth/terms');
+  }
+  onCareersPage(){
+    this.route.navigateByUrl('/auth/careers');
+  }
+  onAboutPage(){
+    this.route.navigateByUrl('/auth/about');
+  }
+  onContactPage(){
+    this.route.navigateByUrl('/auth/contact');
+  }
+  
   
   private showAlert(message:string){
     this.alertCtrl.create({header:'Authentication Failed', 

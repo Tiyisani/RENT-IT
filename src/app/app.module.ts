@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CalendarModule } from 'ion2-calendar';
 import firebase from 'firebase';
+import { Stripe } from '@ionic-native/stripe/ngx';
 
 var firebaseConfig = {
   apiKey: "AIzaSyAHRThXn16BOpgoPuvISrV5lezUK5Y_isk",
@@ -33,6 +34,7 @@ firebase.initializeApp(firebaseConfig);
   providers: [
     StatusBar,
     SplashScreen,
+    Stripe,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

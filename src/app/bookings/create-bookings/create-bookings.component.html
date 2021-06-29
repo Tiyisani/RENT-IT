@@ -80,11 +80,31 @@
           color="primary"
           expand="block"
           [disabled]="!f.valid"
+          
         >
           Confirm
         </ion-button>
       </ion-col>
     </ion-row>
+    <form action="https://www.payfast.co.za/eng/process" name="form_0feb6197f7804d07a1343948292ba345" onsubmit="return click_0feb6197f7804d07a1343948292ba345( this );" method="post">
+      <input type="hidden" name="cmd" value="_paynow">
+      <input type="hidden" name="receiver" value="16659840">
+      <input type="hidden" name="item_name" value="Rent it">
+      <input type="hidden" name="amount" value="200.00">
+      <input type="hidden" name="item_description" value="">
+      <input type="hidden" name="return_url" value="http://www.rentitapp.co.za/bookings">
+      <input type="hidden" name="cancel_url" value="http://www.rentitapp.co.za/discover">
+      <input type="hidden" name="cycles" value="0">
+      <input type="hidden" name="frequency" value="3">
+      <input type="hidden" name="m_payment_id" value="pay_now_16659840">
+      <input type="hidden" name="subscription_type" value="1">
+      <input type="hidden" name="recurring_amount" value="200.00">
+      
+      <table>
+      <tr><td colspan=2 align=center><input type="image" src="https://www.payfast.co.za/images/buttons/light-small-subscribe.png" width="210" height="36" alt="Subscribe Now" title="Subscribe Now with PayFast"></td></tr></table>
+      </form>
+      
+    
   </ion-grid> 
 </form>
 </ion-content>

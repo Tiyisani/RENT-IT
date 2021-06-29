@@ -3,50 +3,32 @@
     <ion-buttons slot="start">
       <ion-menu-button menu="sideMenu"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Your Hired Equipment</ion-title>
+    <ion-title>About us</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngIf="isLoading" class="ion-text-center" size-md = "6" offset-md="3">
-        <ion-spinner color="primary">
-
-        </ion-spinner>
-      </ion-col>
-      <ion-col *ngIf="!isLoading && (loadedBookings && loadedBookings.length <= 0)"
-       class="ion-text-center" size-md = "6" offset-md="3">
-        <p>No one has hired your equipment!</p>
-      </ion-col>
-      <ion-col class="ion-text-center" size-md = "6" offset-md="3"
-        *ngIf="!isLoading && !loadedBookings ||loadedBookings.length > 0" >
-        <ion-list>
-          <ion-item-sliding *ngFor="let booking of loadedBookings" #slidingBooking>
-            <ion-item>
-              <ion-card>
-                <ion-img [src]="booking.equipmentImage"></ion-img>
-                <ion-card-header>
-                  <ion-card-title>{{booking.equipmentTitle}}</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-card-subtitle>{{booking.collection}}</ion-card-subtitle> 
-                  <ion-label> Booked From:{{booking.bookedFrom| date}} 
-                    </ion-label>
-                   
-                  <ion-label>To:{{booking.bookedTo | date}}</ion-label>
-                </ion-card-content>
-               
-               
-              </ion-card>
-            </ion-item>
-            <ion-item-options>
-              <ion-item-option color="danger" (click)="onCancelBooking(booking.id,slidingBooking)">
-                <ion-icon slot="icon-only" name = "trash-outline"></ion-icon>
-              </ion-item-option>
-            </ion-item-options>
-          </ion-item-sliding>
-        </ion-list>
+      <ion-col  class="ion-text-center" size-md = "6" offset-md="3">
+        <h2>RENT IT</h2>
+       <p>RENT IT App  is part of Sani Technological Solutions Pty (Ltd). The Company specializes in Equipment Rental and App Development.
+        The Company aims to connect Equipment owners with Investors and customers by  using modern digital technology , on every platform whether it is web related or mobile related.
+        The Company was started in 2020 and with vast experience in Property,Equipment , web and mobile development.
+        The Company aims to bridge the gap in Africa's Technological and  infrastructure.
+        The company has seen the challenges faced in 2020 as a opportunity to grow and fully integrate with the modern requirements needed to survive in this difficult times.
+        The Company will be helping other companies adapt to the modern requirements through Technology.
+        RENT IT  is an app that  allows customers to easily find Equipment and for projects 
+        The app offers a simple user interface that is easy  and simple to use. 
+        For further information about the company or for any complaints or system errors , please feel free to contact 
+        our team using the contact details below 
+      </p>
+        <h3 class="ion-text-center" >Contact:</h3>
+    <ion-icon  name="mail-outline"></ion-icon>
+  <h6 class="ion-text-center"> InfinionaireWealthManagement@gmail.com</h6>
+  <ion-icon  name="call-outline"></ion-icon>
+  <h6 class="ion-text-center">084 423 9692</h6> 
+      
       </ion-col>
     </ion-row>
   </ion-grid>

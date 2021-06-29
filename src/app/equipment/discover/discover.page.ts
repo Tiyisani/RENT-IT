@@ -3,7 +3,7 @@ import { EquipmentService } from '../equipment.service';
 import { equipment } from '../equipment.model';
 import { Subscription } from 'rxjs';
 import { SegmentChangeEventDetail } from '@ionic/core';
-import { IonInfiniteScroll, IonVirtualScroll, MenuController } from '@ionic/angular';
+import { IonInfiniteScroll, IonVirtualScroll, MenuController, Platform } from '@ionic/angular';
 import { AuthService } from 'src/app/auth/auth.service';
 import { take } from 'rxjs/operators';
 
@@ -25,15 +25,20 @@ export class DiscoverPage implements OnInit, OnDestroy {
   isLoading = false;
   private equipmentSub: Subscription;
   pageSize : number = 5;
+  usePicker =  false;
 
 
   constructor(private equipmentService:EquipmentService,
     private menuCtrl:MenuController,
-    private authService: AuthService,
+    private authService: AuthService,private platform:Platform
     ) { }
 
   ngOnInit() {
   this.start();
+  if(this.platform.is('desktop')
+    ){
+      this.usePicker = true;
+    }
    
   }
 

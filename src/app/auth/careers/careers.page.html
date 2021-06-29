@@ -1,0 +1,257 @@
+<ion-header color="tertiary">
+  <ion-toolbar color="primary">
+    
+   
+    <ion-thumbnail>
+      <ion-img  src="assets/rentit.jpg" class="logo" ></ion-img>
+    </ion-thumbnail>
+    <ion-buttons *ngIf="usePicker" slot="secondary">
+      <ion-button (click)="onNext()"  fill="outline" color="light">
+        <ion-icon slot="start" name="home"></ion-icon>
+        Home
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons *ngIf="usePicker" slot="primary">
+      <ion-button (click)="onAboutPage()"  fill="outline" color="light">
+        about us
+        <ion-icon slot="end" name="help-circle"></ion-icon>
+      </ion-button>
+      <ion-buttons *ngIf="usePicker" slot="secondary">
+        <ion-button (click)="onLoginPage()" color="warning" fill="solid">
+          <ion-icon name="log-in-outline"></ion-icon>
+          Login
+        </ion-button>
+      </ion-buttons>
+    </ion-buttons>
+    <ion-buttons *ngIf="usePicker" slot="secondary">
+      <ion-button  (click)="onContactPage()" fill="outline" color="light">
+        <ion-icon slot="start" name="person-circle"></ion-icon>
+        Contact Us
+      </ion-button>
+      <ion-buttons *ngIf="usePicker" slot="secondary">
+        <ion-button (click)="onCareersPage()" fill="outline" color="light">
+          <ion-icon slot="start" name="briefcase"></ion-icon>
+          Careers
+        </ion-button>
+      </ion-buttons>
+
+    </ion-buttons>
+
+
+  </ion-toolbar>
+  
+   
+
+
+  <ion-nav>
+    <ion-title>Home</ion-title>
+  </ion-nav>
+</ion-header>
+
+<ion-content>
+  
+  
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <ion-grid>
+    <ion-toolbar>
+      <ion-row >
+
+        <ion-col>
+          
+          <h1 *ngIf="usePicker" > Careers , We are hiring
+            
+          </h1>
+         
+        </ion-col>
+      <ion-col  *ngIf="usePicker" size-lg="5"  offset-lg="2"  class="ion-text-right">
+        <ion-img  src="assets/escavator.png" class="logo" ></ion-img>
+        
+
+      </ion-col>
+     
+      
+    </ion-row>
+    </ion-toolbar>
+    <ion-item-divider>
+      <ion-item lines="none" >
+        <ion-col size ="12" size-sm="8" offset-sm="2" *ngIf="usePicker" color="tertiaty" class="ion-text-center" >
+          
+          <ion-card-title size-lg="8" *ngIf="usePicker" class="ion-text-center">
+            
+          </ion-card-title>
+  
+        </ion-col>
+      
+      </ion-item>
+    </ion-item-divider>
+    
+   
+    
+     <ion-row>
+      <ion-col  class="ion-text-center" >
+        <ion-card-title  color="primary">
+          
+        </ion-card-title>
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col *ngIf="usePicker" class="ion-text-center">
+          <ion-card>
+            <ion-card-title color="secondary">
+              Mobile App Developer Internship
+            </ion-card-title>
+            <p>We are looking to train and hire IT students for Internship to learn how to code Hybrid web and Mobile Applications
+              for Rent IT  
+            </p>
+            <ion-img  src="assets/marting.jpg" class="logo" ></ion-img>
+          </ion-card>
+          
+       
+        </ion-col>
+
+        
+        
+        <ion-col *ngIf="usePicker" class="ion-text-center">
+          <ion-card>
+
+          <ion-card-title color="secondary">
+            Marketing Internship          </ion-card-title >
+          <p>We are looking to train and hire Marketing students for Internship to learn skills on digital Marketing , Business Planning 
+            and Business Presentation
+            for Rent IT   
+          </p>
+          <ion-img  src="assets/graph.jpg" class="logo" ></ion-img>
+        </ion-card>
+
+        </ion-col>
+
+        <ion-col *ngIf="usePicker" class="ion-text-center">
+          <ion-card>
+          <ion-card-title color="secondary">
+            Senior Mobile App developer
+          </ion-card-title>
+          <p>We are looking to hire a Mobile app developer for to lead the Technology department for Rent IT 
+          </p>
+          <ion-img  src="assets/prent.jpg" class="logo" ></ion-img>
+        </ion-card>
+        </ion-col>
+
+      </ion-row>
+        
+      
+      <ion-item-divider>
+        <ion-item lines="none" >
+          <ion-col size ="12" size-sm="8" offset-sm="2" *ngIf="usePicker" color="tertiaty" class="ion-text-center" >
+            <ion-card>
+              <ion-card-title *ngIf="usePicker" class="ion-text-center">
+                RENT IT Technology brings about a new Way and more innovative manner for Equipment Owners and Project Managers
+                to work together and bring about a change in Africa for the better.
+              </ion-card-title>
+        
+            </ion-card>
+            
+          </ion-col>
+        
+        </ion-item>
+      </ion-item-divider>
+      
+      <ion-row>
+        <ion-col  class="ion-text-center" >
+          <ion-card-title  >
+            Our Partners
+          </ion-card-title>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngIf="usePicker" class="ion-text-center">
+            <ion-card>
+              <ion-card-title color="secondary">
+                INFINIONAIRE WEALTH MANAGEMENT
+              </ion-card-title>
+             
+              <ion-img  src="assets/blaklogo.jpg" class="logo" ></ion-img>
+            </ion-card>
+            
+         
+          </ion-col>
+  
+          
+          
+          <ion-col *ngIf="usePicker" class="ion-text-center">
+            <ion-card>
+  
+            <ion-card-title color="secondary">
+              FoodWETU
+            </ion-card-title >
+          
+            <ion-img  src="assets/FoodWETU .png" class="logo" ></ion-img>
+          </ion-card>
+  
+          </ion-col>
+  
+          <ion-col *ngIf="usePicker" class="ion-text-center">
+            <ion-card>
+            <ion-card-title color="secondary">
+              SANI TECHNOLOGICAL SOLUTIONS
+            </ion-card-title>
+           
+            <ion-img  src="assets/Sanitechnological solution.png" class="logo" ></ion-img>
+          </ion-card>
+          </ion-col>
+  
+        </ion-row>
+      
+    
+
+    <ion-row>
+      <ion-col size-lg="3"  offset-lg="4.5" class="ion-text-center" class="ion-text-center">
+        <ion-img  src="assets/ri.jpg" class="logo" ></ion-img>
+       
+      </ion-col>
+    </ion-row>
+   
+    
+  </ion-grid>
+</form>
+
+<ion-toolbar color="dark">
+  <ion-row>
+   
+    
+    <ion-col class="ion-text-center">
+      <ion-thumbnail >
+        <ion-img   src="assets/rentit.jpg" class="logo" ></ion-img>
+      </ion-thumbnail>
+      <ion-avatar >
+        <ion-img   src="assets/PLAYSTORE.jpg" class="logo" ></ion-img>
+      </ion-avatar>
+      <p>Terms of use</p>
+      <p>Privacy Policy</p>
+      <p>@ 2021 Rent IT . All Rights Reserved </p>
+      <p><ion-icon name="call-outline"></ion-icon> 084 423 9692</p>
+
+    </ion-col>
+
+    <ion-col class="ion-text-center">
+      
+      <h1> Contact Us</h1>
+      <p> <ion-icon name="mail-outline"></ion-icon>  InfinionaireWealthManagement@gmail.com</p>
+      <p> <ion-icon name="logo-whatsapp"></ion-icon> 084 423 9692</p>
+      <p>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </p>
+      
+      <ion-icon name="logo-facebook"></ion-icon>
+      
+     
+    
+    </ion-col>
+
+  </ion-row>
+</ion-toolbar>
+</ion-content>
+
+  

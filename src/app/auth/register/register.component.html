@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating"> first name</ion-label>
+            <ion-input
+              type="text"
+              required
+              ngModel name ="firstname"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">last name</ion-label>
+            <ion-input
+              type="text"
+              required
+              ngModel name ="lastname"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+     
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">password</ion-label>
+            <ion-input
+            type="password" 
+            ngModel name ="password"
+           required
+           minlength="6"
+           #passCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!passCtrl.valid && passCtrl.touched" lines="none">
+            <ion-label>should be at least 6 characters long</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">confirm password</ion-label>
+            <ion-input
+            type="password" 
+            ngModel name ="confrimpassword"
+           required
+           minlength="6"
+           #passCtrl1="ngModel"
+            ></ion-input>
+          </ion-item>
+          <ion-item *ngIf="(passCtrl.valid!=passCtrl1) && passCtrl.touched" lines="none">
+            <ion-label>should be the same</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">email</ion-label>
+            <ion-input
+              type="email"
+              required
+              email 
+              #emailCtrl="ngModel"
+              ngModel name ="email"
+            ></ion-input>
+            <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
+              <ion-label>should be a valid email</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">phone number</ion-label>
+            <ion-input
+              type="text"
+              required
+              minlength="10"
+              ngModel name ="phone number"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">address</ion-label>
+            <ion-input
+              type="text"
+              required
+              minlength="10"
+              ngModel name ="phone number"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+

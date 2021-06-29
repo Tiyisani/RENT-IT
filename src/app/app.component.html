@@ -18,6 +18,18 @@
           <ion-label>Hired Equipment</ion-label>
         </ion-item>
        </ion-menu-toggle>
+       <ion-menu-toggle>
+        <ion-item lines="none" routerLink="/equipment/tabs/offers" >
+          <ion-icon  name="medkit-outline" slot="start"></ion-icon>
+          <ion-label>List your Equipment</ion-label>
+        </ion-item>
+       </ion-menu-toggle>
+       <ion-menu-toggle>
+        <ion-item lines="none" menu="sideMenu" routerLink="/equipment/tabs/messaging" >
+          <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+            <ion-label>About us</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-item  (click)="onLogOut()" button>
           <ion-icon  slot="start" name="log-out-outline"></ion-icon>

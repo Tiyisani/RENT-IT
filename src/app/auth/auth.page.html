@@ -1,7 +1,53 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
+<ion-header color="tertiary">
+  <ion-toolbar color="primary">
+    
+   
+    <ion-thumbnail>
+      <ion-img  src="assets/rentit.jpg" class="logo" ></ion-img>
+    </ion-thumbnail>
+    <ion-buttons *ngIf="usePicker" slot="secondary">
+      <ion-button (click)="onNext()"  fill="outline" color="light">
+        <ion-icon slot="start" name="home"></ion-icon>
+        Home
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons *ngIf="usePicker" slot="primary">
+      <ion-button (click)="onAboutPage()"  fill="outline" color="light">
+        about us
+        <ion-icon slot="end" name="help-circle"></ion-icon>
+      </ion-button>
+
+      <ion-buttons  slot="secondary">
+        <ion-button (click)="onLoginPage()" color="warning" fill="solid">
+          <ion-icon name="log-in-outline"></ion-icon>
+          Login
+        </ion-button>
+
+      </ion-buttons>
+    </ion-buttons>
+    <ion-buttons *ngIf="usePicker"  slot="secondary">
+      <ion-button  (click)="onContactPage()" fill="outline" color="light">
+        <ion-icon slot="start" name="person-circle"></ion-icon>
+        Contact Us
+      </ion-button>
+      <ion-buttons *ngIf="usePicker" slot="secondary">
+        <ion-button (click)="onCareersPage()" fill="outline" color="light">
+          <ion-icon slot="start" name="briefcase"></ion-icon>
+          Careers
+        </ion-button>
+      </ion-buttons>
+
+    </ion-buttons>
+
   </ion-toolbar>
+  
+   
+
+
+  <ion-nav>
+    <ion-title>Home</ion-title>
+  </ion-nav>
 </ion-header>
 
 <ion-content>
@@ -10,83 +56,224 @@
 
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <ion-grid>
-    <ion-item lines="none" >
-      <ion-col class="ion-text-center">
-        <ion-img  src="assets/rentit.jpg" class="logo" ></ion-img>
-      </ion-col>
-  
-    </ion-item>
-    <ion-item lines="none" >
-      <ion-col class="ion-text-center" >
-        <ion-card-title>
-          RENT IT
-        </ion-card-title>
-        
-      </ion-col>
-    </ion-item>
-    <ion-row>
-      <ion-col size-md="6" offset-md="3" >
-        <ion-list>
-          <ion-item> 
-            <ion-label position ="floating">Email</ion-label>
-            <ion-input type="email"
-            ngModel name ="email"
-            required
-            email 
-            #emailCtrl="ngModel"
-          
-            ></ion-input>
-            <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
-              <ion-label>should be a valid email</ion-label>
-            </ion-item>
-          </ion-item>
-          <ion-item>
-            <ion-label position ="floating">Password</ion-label>
-             <ion-input type="password" 
-             ngModel name ="password"
-            required
-            minlength="6"
-            #passCtrl="ngModel"
-            
-             ></ion-input>
-          </ion-item>
-          <ion-item *ngIf="!passCtrl.valid && passCtrl.touched" lines="none">
-            <ion-label>should be at least 6 characters long</ion-label>
-          </ion-item>
+    <ion-toolbar>
+      <ion-row >
 
-        </ion-list>
+        <ion-col>
+          
+          <h1 *ngIf="usePicker" > Rent   Machinery and Equipment for your project Easier and Cheaper than Before
+            
+          </h1>
+          <h3 *ngIf="usePicker"> whether its farming, construction and home use  you can get it all here on Rent it.
+            . Equipment and Machinery at your deposal  right here on Rent IT 
+            
+          </h3>
+      <ion-button color="warning" (click)="onSwitchAuthMode()">Sign Up Now</ion-button>
+      <ion-button *ngIf="usePicker" fill="outline" color="secondary" (click)="onAboutPage()">Learn More</ion-button>
+      <ion-button color="warning" *ngIf="!usePicker" (click)="onLoginPage()">Login In</ion-button>
+        </ion-col>
+      <ion-col  *ngIf="usePicker" size-lg="5"  offset-lg="2"  class="ion-text-right">
+        <ion-img  src="assets/escavator.png" class="logo" ></ion-img>
+        
+
       </ion-col>
+     
+      
     </ion-row>
+    </ion-toolbar>
+    <ion-item-divider>
+      <ion-item lines="none" >
+        <ion-col size ="12" size-sm="8" offset-sm="2" *ngIf="usePicker" color="tertiaty" class="ion-text-center" >
+          
+          <ion-card-title size-lg="8" *ngIf="usePicker" class="ion-text-center">
+            Rent IT is a South African digital platform for Equipment and Machinery Rentals 
+            across the continent. save money on buying  expensive machinery and equipment ,rather use Rent it and get the 
+            best equipment and machinery for your project at cheap value to do the job for you
+            Maximise your investment and place your equipment for hire here on Rent IT.A platform for Machinery and 
+            Equipment owners and users to collaborate to accomplish projects 
+            together cheaper and more efficiently. The Software an easy rental system along with the date selection
+            for the equipment Rental . We are looking to add many more equipment and Machinery on our platform to suit the needs
+            of every customer on our platfrom
+          </ion-card-title>
+  
+        </ion-col>
+      
+      </ion-item>
+    </ion-item-divider>
+    
+   
+    
+     <ion-row>
+      <ion-col  class="ion-text-center" >
+        <ion-card-title   color="primary">
+          Who is Rent it for?
+        </ion-card-title>
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col  class="ion-text-center">
+          <ion-card>
+            <ion-card-title color="secondary">
+              Equipment owners
+            </ion-card-title>
+            <p>Equipment owners can still maximize their investment in the Machinery and equipment they have
+              by uploading their equipment and machinery on our app and allowing rentals for their equipment
+            </p>
+            <ion-img  src="assets/pic.jpg" class="logo" ></ion-img>
+          </ion-card>
+          
+       
+        </ion-col>
+
+        
+        
+        <ion-col  class="ion-text-center">
+          <ion-card>
+
+          <ion-card-title color="secondary">
+            Construction Companies
+          </ion-card-title >
+          <p>Construction Companies  can rent and hire equipment and machinery on our app
+            and using it for their construction projects. Companies can still make money even when the projects are 
+            stagnent by uploading their machinery here on Rent IT.  
+          </p>
+          <ion-img  src="assets/construction.jpg" class="logo" ></ion-img>
+        </ion-card>
+
+        </ion-col>
+
+        <ion-col  class="ion-text-center">
+          <ion-card>
+          <ion-card-title color="secondary">
+            Farmers
+          </ion-card-title>
+          <p>Farmers  can rent and hire equipment and machinery on our app
+            and using it for their farming needs
+          </p>
+          <ion-img  src="assets/trak.jpg" class="logo" ></ion-img>
+        </ion-card>
+        </ion-col>
+
+      </ion-row>
+        
+      
+      <ion-item-divider>
+        <ion-item lines="none" >
+          <ion-col size ="12" size-sm="8" offset-sm="2" *ngIf="usePicker" color="tertiaty" class="ion-text-center" >
+            <ion-card>
+              <ion-card-title  class="ion-text-center">
+                RENT IT Technology brings about a new Way and more innovative manner for Equipment Owners and Project Managers
+                to work together and bring about a change in Africa for the better.
+              </ion-card-title>
+        
+            </ion-card>
+            
+          </ion-col>
+        
+        </ion-item>
+      </ion-item-divider>
+      
+      <ion-row>
+        <ion-col  class="ion-text-center" >
+          <ion-card-title   >
+            Our Partners
+          </ion-card-title>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col  class="ion-text-center">
+            <ion-card>
+              <ion-card-title color="secondary">
+                INFINIONAIRE PROPERTIES
+              </ion-card-title>
+             
+              <ion-img  src="assets/blaklogo.jpg" class="logo" ></ion-img>
+            </ion-card>
+            
+         
+          </ion-col>
+  
+          
+          
+          <ion-col  class="ion-text-center">
+            <ion-card>
+  
+            <ion-card-title color="secondary">
+              FoodWETU
+            </ion-card-title >
+          
+            <ion-img  src="assets/FoodWETU .png" class="logo" ></ion-img>
+          </ion-card>
+  
+          </ion-col>
+  
+          <ion-col  class="ion-text-center">
+            <ion-card>
+            <ion-card-title color="secondary">
+              SANI TECHNOLOGICAL SOLUTIONS
+            </ion-card-title>
+           
+            <ion-img  src="assets/Sanitechnological solution.png" class="logo" ></ion-img>
+          </ion-card>
+          </ion-col>
+  
+        </ion-row>
+      
+    
+
     <ion-row>
-      <ion-col size-md="6" offset-md="3">
-        <ion-button 
-        type="button"
-        color="primary" 
-        fill ="clear"
-         expand="block"
-         (click)="onSwitchAuthMode()"
-         >don't have an account ? Sign Up</ion-button>
-        <ion-button  type="submit" 
-        color="primary" 
-        expand="block" 
-        [disabled]="!f.valid"
-        >Login</ion-button>
+      <ion-col size-lg="3"  offset-lg="4.5" class="ion-text-center" class="ion-text-center">
+        <ion-img  src="assets/ri.jpg" class="logo" ></ion-img>
+       
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button 
-        (click)="onReset()"
-        type="button"
-        color="primary" 
-        fill ="clear"
-         expand="block"
-         >
-        Forgot Password?
-        </ion-button>
-      </ion-col>
-    </ion-row>
+   
+    
   </ion-grid>
 </form>
 
+<ion-toolbar color="dark">
+  <ion-row>
+   
+    
+    <ion-col class="ion-text-center">
+      <p>Terms of use</p>
+        <p>Privacy Policy</p>
+        <p>@ 2021 Rent IT . All Rights Reserved </p>
+        
+      <ion-thumbnail >
+        <ion-img   src="assets/rentit.jpg" class="logo" ></ion-img>
+      </ion-thumbnail>
+      <ion-avatar >
+        <ion-img   src="assets/PLAYSTORE.jpg" class="logo" ></ion-img>
+        
+        
+  
+      </ion-avatar>
+     
+    </ion-col>
+
+    <ion-col class="ion-text-center">
+      
+      <h1> Contact Us</h1>
+      <p> <ion-icon name="mail-outline"></ion-icon>  InfinionaireWealthManagement@gmail.com</p>
+      <p> <ion-icon name="logo-whatsapp"></ion-icon> 081 246 5317</p>
+      <p><ion-icon name="call-outline"></ion-icon> 081 246 5317</p>
+      <p>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </p>
+      
+      <ion-icon name="logo-facebook"></ion-icon>
+     
+      
+     
+    
+    </ion-col>
+
+  </ion-row>
+</ion-toolbar>
 </ion-content>
+
+  
+

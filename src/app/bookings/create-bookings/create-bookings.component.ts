@@ -68,6 +68,7 @@ export class CreateBookingsComponent implements OnInit,OnDestroy {
     const availableTo = new Date(this.selectedEquipment.availableTo);
     const b = new Date( this.book);
     const a = new Date(this.boo)
+    
     const num = Number(a);
     const numb = Number(b);
    
@@ -77,7 +78,8 @@ export class CreateBookingsComponent implements OnInit,OnDestroy {
       disableWeeks: [0,6],
       to: availableTo,
       daysConfig:[{ date: a, disable: true,subTitle:'Booked'},
-      {date:b,disable:true,subTitle:'Booked'}],
+      {date:b,disable:true,subTitle:'Booked'},],
+
       
       
       
@@ -87,6 +89,7 @@ export class CreateBookingsComponent implements OnInit,OnDestroy {
     const myCalendar = await this.modalCtrl.create({
       component: CalendarModal,
       componentProps: { options }
+
     });
   
     myCalendar.present();
@@ -103,6 +106,7 @@ export class CreateBookingsComponent implements OnInit,OnDestroy {
 
     const start = new Date(from.dateObj);
     const end = new Date(to.dateObj) ;
+    
 
     console.log(start, end);
     
@@ -114,6 +118,8 @@ export class CreateBookingsComponent implements OnInit,OnDestroy {
     this.startDate = start;
     this.endDate = end;
   }
+
+  
 
   onBookEquipment() {
     if (!this.form.valid|| !this.endDate) {
@@ -144,6 +150,15 @@ export class CreateBookingsComponent implements OnInit,OnDestroy {
   onLocationPicked(location: EquipmentLocation){
     this.form.patchValue({location: location});
   }
+  
+
+  click_0feb6197f7804d07a1343948292ba345( aform_reference ) {
+              var aform = aform_reference;
+              aform['amount'].value = Math.round( aform['amount'].value*Math.pow( 10,2 ) )/Math.pow( 10,2 );
+  }
+  
+
+  
   
   ngOnDestroy() {
   if(this.bookingSub){

@@ -196,7 +196,8 @@ let imageFile;
       subscribe(() => {
         loadingEl.dismiss();
         this.form.reset();
-        this.router.navigate(['/equipment/tabs/offers']); 
+        /*this.router.navigate(['/equipment/tabs/offers']); */
+        this.router.navigate(['/stripe']); 
         this.showAlert; 
         
         

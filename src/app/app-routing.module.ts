@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./bookings/bookings.module').then( m => m.BookingsPageModule),
     canLoad:[AuthGuard]
   },
+  {
+    path: 'stripe',
+    loadChildren: () => import('./stripe/stripe.module').then( m => m.StripePageModule)
+  },
 
 ];
 
